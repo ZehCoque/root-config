@@ -7,10 +7,19 @@ import {
 import { HTMLLayoutData } from "single-spa-layout/dist/types/isomorphic/constructRoutes";
 import microfrontendLayout from "./microfrontend-layout.html";
 
-const list = ["test1", "test2"];
+const list = [];
+
+function pushToList(element: string) {
+  console.log(element)
+  list.push(element)
+  console.log(list)
+
+}
+
 const hmtlLayoutData: HTMLLayoutData = {
   props: {
     list,
+    pushToList
   },
   loaders: {},
 };

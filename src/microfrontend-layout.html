@@ -18,8 +18,62 @@
   -->
 
   <main>
+    <style>
+      .navbar {
+        position: relative;
+        background-color: #111D4A;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        width: 100%;
+        height: 75px;
+        display: flex;
+        align-items: center;
+        margin: 0;
+      }
+  
+      .navbar ul {
+        display: flex;
+        align-items: center;
+        list-style-type: none;
+        height: 100%;
+      }
+  
+      .navbar li {
+        padding-right: 24px;
+        height: 100%;
+      }
+  
+      .navbar li:hover {
+        opacity: 0.8;
+      }
+  
+      .navbar a {
+        text-decoration: none;
+        color: white;
+      }
+    </style>
+    <div class="navbar">
+      <ul>
+        <a onclick="singleSpaNavigate('/react')">
+          <li>
+            React
+          </li>
+        </a>
+        <a onclick="singleSpaNavigate('/angular')">
+          <li>
+            Angular
+          </li>
+        </a>        
+        <a onclick="singleSpaNavigate('/both')">
+          <li>
+            Ambos
+          </li>
+        </a>
+      </ul>
+    </div>
     <route path="/angular">
-      <application name="angular-app" props="list"></application>
+      <application name="angular-app" props="pushToList"></application>
     </route>
     <route path="/react">
       <application name="@org/react-app" props="list"></application>
@@ -29,7 +83,7 @@
         <application name="@org/react-app" props="list"></application>
       </div>
       <div>
-        <application name="angular-app" props="list"></application>
+        <application name="angular-app" props="pushToList"></application>
       </div>
     </route>
   </main>
